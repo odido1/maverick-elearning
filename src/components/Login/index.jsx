@@ -7,6 +7,7 @@ import { Eye, EyeOff } from 'lucide-react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../Firebase';
 import './LoginForm.css';
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -186,11 +187,11 @@ const LoginForm = () => {
         </div>
         
         <div className="form-links">
-          <a href="/fpassword" className="forgot-password">
+          <Link href="/fpassword" className="forgot-password">
             Forgot your password?
-          </a>
+          </Link>
           <div className="signup-link">
-            No account? <a href="/signup">Sign up</a>
+            No account? <Link href="/signup">Sign up</Link>
           </div>
         </div>
       </form>

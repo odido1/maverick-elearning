@@ -1,0 +1,225 @@
+/* CertificateStyles.css */
+
+.certificate-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .certificate-wrapper {
+    width: 100%;
+    max-width: 900px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  
+  .certificate {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    padding: 32px;
+    border: 8px solid #2e7d32; /* Green border */
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+  }
+  
+  .certificate-header {
+    text-align: center;
+    margin-bottom: 54px;
+  }
+  
+  .certificate-header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1b5e20; 
+    margin: 0;
+  }
+  
+  .header-divider {
+    width: 100%;
+    border-bottom: 2px solid #4caf50; 
+    margin-top: 8px;
+    margin-bottom: 50px;
+  }
+  
+  .certificate-logo {
+    position: absolute;
+    top: 32px;
+    left: 32px;  
+  }
+  
+  .logo-circle {
+    width: 64px;
+    height: 64px;
+    background-color: #4caf50; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-circle span {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .certificate-content {
+    text-align: center;
+    margin: 32px 0;
+  }
+  
+  .certificate-content p {
+    font-size: 18px;
+    margin: 16px 0;
+  }
+  
+  .student-name {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2e7d32; /* Green text */
+    margin: 16px 0;
+  }
+  
+  .course-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2e7d32; /* Green text */
+    margin: 16px 0;
+  }
+  
+  .completion-date {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2e7d32; /* Green text */
+    margin-top: 8px;
+  }
+  
+  .certificate-signatures {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 64px;
+    padding: 0 48px;
+  }
+  
+  .signature-box {
+    text-align: center;
+  }
+  
+  .signature-line {
+    border-bottom: 1px solid #757575;
+    width: 200px;
+    margin-bottom: 8px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .signature-name {
+    border-bottom: 1px solid #757575;
+    width: 80%;
+    margin-bottom: 8px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .signature-line p {
+    font-style: italic;
+    color: #616161;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .signature-label {
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .certificate-id {
+    position: absolute;
+    bottom: 16px;
+    right: 32px;
+    font-size: 14px;
+    color: #757575;
+  }
+  
+  .certificate-actions {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .download-button {
+    display: flex;
+    align-items: center;
+    background-color: #4caf50; /* Green button */
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .download-button:hover {
+    background-color: #2e7d32; /* Darker green on hover */
+  }
+  
+  .download-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .certificate {
+      padding: 24px;
+    }
+    
+    .certificate-header h1 {
+      font-size: 22px;
+    }
+    
+    .student-name {
+      font-size: 26px;
+    }
+    
+    .course-title {
+      font-size: 20px;
+    }
+    
+    .certificate-signatures {
+      padding: 0 24px;
+    }
+    
+    .signature-line {
+      width: 140px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .certificate {
+      padding: 16px;
+      border-width: 4px;
+    }
+    
+    .certificate-content p {
+      font-size: 16px;
+    }
+    
+    .student-name {
+      font-size: 22px;
+    }
+    
+    .signature-line {
+      width: 120px;
+    }
+  }

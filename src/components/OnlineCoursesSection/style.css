@@ -1,0 +1,25 @@
+.onlinecourse{
+    width: 90%;
+    margin: 50px auto 50px;
+    padding: 20px;
+}
+.type{
+    padding-top: 8px;
+    padding-bottom: 10px;
+}
+.paragraph{
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+.onlinecards{
+    padding: 20px;
+}
+.span{
+    padding: 8px;
+}
+
+.btn{
+    margin-top: 70px;
+}

@@ -1,0 +1,42 @@
+.container{
+    border-top-right-radius: 10px;
+}
+.course {
+    width: 90%;
+    margin: 100px auto 250px;
+    position: relative;
+    padding-bottom: 100px;
+  }
+  
+  .cards {
+    width: 85%;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0 40px;
+    bottom: -190px; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .cards {
+      flex-direction: row;
+    }
+  }
+  
+  
+  .healthtext {
+    padding-left: 40px;
+    padding-top: 40px;
+  }
+
+.icons{
+    margin: 10px;
+}
+  .cardtext {
+    padding: 15px;
+    padding-top: 8px;
+  }

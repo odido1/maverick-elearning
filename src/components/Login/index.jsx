@@ -187,11 +187,11 @@ const LoginForm = () => {
         </div>
         
         <div className="form-links">
-          <Link href="/fpassword" className="forgot-password">
+          <Link to="/fpassword" className="forgot-password">
             Forgot your password?
           </Link>
           <div className="signup-link">
-            No account? <Link href="/signup">Sign up</Link>
+            No account? <Link to="/signup">Sign up</Link>
           </div>
         </div>
       </form>

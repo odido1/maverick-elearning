@@ -16,7 +16,7 @@ const BaseRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="Fpassword" element={<FpasswordPage />} />
+      <Route path="fpassword" element={<FpasswordPage />} />
       <Route path="login" element={<LoginPage />} />
       <Route path="signup" element={<RegistrationPage />} />
       

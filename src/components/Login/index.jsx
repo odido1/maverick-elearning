@@ -140,7 +140,6 @@ const LoginForm = () => {
         Enter your credentials to access your account
       </p>
       
-      {/* {generalError && <p className="error-message general-error">{generalError}</p>} */}
       
       <form onSubmit={handleSubmit}>
         <div className="input-container">
@@ -187,7 +186,7 @@ const LoginForm = () => {
         </div>
         
         <div className="form-links">
-          <a href="/Fpassword" className="forgot-password">
+          <a href="/fpassword" className="forgot-password">
             Forgot your password?
           </a>
           <div className="signup-link">

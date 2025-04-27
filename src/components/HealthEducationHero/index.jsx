@@ -5,17 +5,12 @@ import group2 from "../../assets/images/group2.png";
 import rectangle from "../../assets/images/rectangle.svg";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-
-// import "./style.css"
 import "./index.css"
 
 const HealthEducationHero = () => {
   return (
     <div className="w-full mx-auto bg-gradient-to-br from-white to-green-50 p-6 relative overflow-hidden py-15 sm:py-5">
-      {/* <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute bottom-0 left-0 w-32 h-full border-l-4 border-b-4 border-blue-500 opacity-70"></div>
-      </div> */}
+    
       <div className="absolute left-8 bottom-8">
         <img src={group1} alt="" />
       </div>

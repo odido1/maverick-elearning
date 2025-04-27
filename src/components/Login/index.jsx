@@ -49,7 +49,6 @@ const LoginForm = () => {
     setShowPassword(!showPassword);
   };
 
-  // Effect to show toast when generalError changes
   useEffect(() => {
     if (generalError) {
       toast.error(generalError);
@@ -91,8 +90,7 @@ const LoginForm = () => {
         
         console.log("User logged in successfully:", userCredential.user);
         
-        // Show success toast
-        toast.success("Login successful! Redirecting to dashboard...");
+        toast.success("Login successful!");
         
         setTimeout(() => {
           navigate('/dashboard');
@@ -128,7 +126,6 @@ const LoginForm = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        // theme='light'
       />
       
       <div className="logo-container">

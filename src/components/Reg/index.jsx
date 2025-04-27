@@ -19,17 +19,16 @@ const AccountRegistrationForm = () => {
     firstName: '',
     surname: '',
     email: '',
+    phoneNumber: '',
     nationality: ''
   });
 
-  // Effect to show toast when success message changes
   useEffect(() => {
     if (success) {
       toast.success(success);
     }
   }, [success]);
 
-  // Effect to show toast when error message changes
   useEffect(() => {
     if (error) {
       toast.error(error);
@@ -42,7 +41,6 @@ const AccountRegistrationForm = () => {
       ...prevState,
       [name]: value
     }));
-    // Clear error when user starts typing again
     setError('');
   };
 
@@ -52,7 +50,6 @@ const AccountRegistrationForm = () => {
     setSuccess('');
     setLoading(true);
     
-    // Basic validation
     if (formData.password !== formData.confirmPassword) {
       setError('Passwords do not match');
       setLoading(false);
@@ -66,7 +63,7 @@ const AccountRegistrationForm = () => {
     }
     
     try {
-      // Create user with email and password
+
       const userCredential = await createUserWithEmailAndPassword(
         auth, 
         formData.email, 
@@ -75,7 +72,7 @@ const AccountRegistrationForm = () => {
       
       const user = userCredential.user;
       
-      // Update user profile with display name
+
       if (formData.firstName || formData.surname) {
         const displayName = `${formData.firstName} ${formData.surname}`.trim();
         await updateProfile(user, {
@@ -83,11 +80,12 @@ const AccountRegistrationForm = () => {
         });
       }
       
-      // Add user data to Firestore
+
       await setDoc(doc(db, "users", user.uid), {
         uid: user.uid,
         email: formData.email,
         username: formData.username,
+        phoneNumber: formData.phoneNumber || "",
         firstName: formData.firstName || "",
         surname: formData.surname || "",
         nationality: formData.nationality || "",
@@ -97,7 +95,7 @@ const AccountRegistrationForm = () => {
       console.log("User registered successfully and added to Firestore:", user);
       setSuccess('Registration successful! You can now log in.');
       
-      // Reset form after successful registration
+
       setFormData({
         username: '',
         password: '',
@@ -105,6 +103,7 @@ const AccountRegistrationForm = () => {
         firstName: '',
         surname: '',
         email: '',
+        phoneNumber: '',
         nationality: ''
       });
       
@@ -148,8 +147,6 @@ const AccountRegistrationForm = () => {
         via the login page.
       </p>
       
-      {/* {error && <div className="error-message">{error}</div>} */}
-      {/* {success && <div className="success-message">{success}</div>} */}
       
       <form onSubmit={handleSubmit}>
         <FormInput 
@@ -168,7 +165,16 @@ const AccountRegistrationForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
-        />
+        /> 
+
+         <FormInput 
+          type="number"
+          placeholder="Phone Number"
+          name="phoneNumber"
+          value={formData.phoneNumber}
+          onChange={handleChange}
+          required
+        />     
         
         <FormInput 
           type="password"

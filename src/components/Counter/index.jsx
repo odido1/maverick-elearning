@@ -23,16 +23,14 @@ export default function StatsCounter() {
       mirror: false
     });
     
-    // Create intersection observer to detect when the section is visible
-    const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries) => {
       const [entry] = entries;
       if (entry.isIntersecting && !countersStarted) {
         startCounters();
         setCountersStarted(true);
       }
-    }, { threshold: 0.2 }); // Trigger when 20% of the element is visible
+    }, { threshold: 0.2 }); 
     
-    // Observe the section
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }

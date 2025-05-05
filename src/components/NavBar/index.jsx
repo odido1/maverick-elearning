@@ -16,13 +16,11 @@ const Navbar = () => {
     });
   }, []);
 
-  // Function to handle smooth scrolling
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    // Close mobile menu after clicking
     setIsOpen(false);
   };
 
@@ -151,8 +149,15 @@ const Navbar = () => {
             </a>
 
             <div className="flex flex-col space-y-2 w-full" data-aos="fade-right" data-aos-delay="300">
+              <Link to="/login">
               <Button text="Login" className="justify-start px-0" />
+              </Link>
+
+              <Link to="/signup">
               <Button text="Sign up" className="justify-start px-0" />
+              </Link>
+             
+             
             </div>
           </div>
         </div>

@@ -53,10 +53,8 @@ const ForgotPasswordForm = () => {
       await sendPasswordResetEmail(auth, formData.email);
       setSuccess('Password reset email sent! Please check your inbox.');
       
-      // Reset form
       setFormData({ email: '' });
       
-      // Optionally redirect to login page after a delay
       setTimeout(() => {
         navigate('/login');
       }, 5000);
@@ -64,8 +62,6 @@ const ForgotPasswordForm = () => {
       console.error("Error sending password reset email:", error);
       
       if (error.code === 'auth/user-not-found') {
-        // For security reasons, we should not reveal if an email exists or not
-        // Instead, show a generic success message
         setSuccess('If an account exists with this email, a password reset link has been sent.');
       } else if (error.code === 'auth/invalid-email') {
         setError('Please enter a valid email address');

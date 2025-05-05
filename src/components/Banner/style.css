@@ -1,58 +1,94 @@
-.banner{
-    padding: 150px;
+/* Responsive banner styling */
+.banner {
+  padding: 60px 16px;
 }
 
-.banner h1{
+/* Small screens (640px and up) */
+@media (min-width: 640px) {
+  .banner {
+    padding: 80px 24px;
+  }
+}
+
+/* Medium screens (768px and up) */
+@media (min-width: 768px) {
+  .banner {
+    padding: 100px 32px;
+  }
+}
+
+/* Large screens (1024px and up) */
+@media (min-width: 1024px) {
+  .banner {
+    padding: 150px;
+  }
+}
+
+.banner h1 {
   margin: 15px;
 }
-.banner p{
+
+.banner p {
   margin: 15px;
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-bottom: 64px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.button {
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.primary-button {
+  background-color: #1B5C12;
+  color: white;
+}
+
+.primary-button:hover {
+  background-color: #246e44;
+}
+
+.secondary-button {
+  background-color: white;
+  color: #333;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secondary-button:hover {
+  background-color: #f5f5f5;
+}
+
+.play-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+/* Responsive adjustments for buttons on small screens */
+@media (max-width: 640px) {
+  .button-container {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .button {
-    padding: 12px 24px;
-    border-radius: 10px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    font-size: 1rem;
-   
+    width: 100%;
   }
-  
-  .primary-button {
-    background-color: #1B5C12;
-    color: white;
-  }
-  
-  .primary-button:hover {
-    background-color: #246e44;
-  }
-  
-  .secondary-button {
-    background-color: white;
-    color: #333;
-    border: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .secondary-button:hover {
-    background-color: #f5f5f5;
-  }
-  
-  .play-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-  }
-  
+}

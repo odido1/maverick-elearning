@@ -11,7 +11,6 @@ export default function StatsCounter() {
     { target: 27, label: "Tutors", suffix: "+" },
     { target: 12, label: "Mentors", suffix: "+" },
     { target: 90, label: "Certifications", suffix: "+" },
-    { target: 15, label: "Awards", suffix: "+" },
   ];
 
   const [counters, setCounters] = useState(stats.map(() => 0));
@@ -23,7 +22,7 @@ export default function StatsCounter() {
       mirror: false
     });
     
-        const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
       const [entry] = entries;
       if (entry.isIntersecting && !countersStarted) {
         startCounters();
@@ -44,7 +43,6 @@ export default function StatsCounter() {
   
   
   const startCounters = () => {
-
     const duration = 2000;
     const frameRate = 1000 / 60; 
     const totalFrames = Math.round(duration / frameRate);
@@ -54,7 +52,6 @@ export default function StatsCounter() {
     const counter = setInterval(() => {
       frame++;
       
-     
       const progress = frame / totalFrames;
       const easedProgress = easeOutQuad(progress);
       
@@ -62,7 +59,6 @@ export default function StatsCounter() {
         return Math.min(Math.round(easedProgress * stat.target), stat.target);
       }));
       
-  
       if (frame === totalFrames) {
         clearInterval(counter);
       }
@@ -76,15 +72,11 @@ export default function StatsCounter() {
   return (
     <section
       ref={sectionRef}
-      className="w-full h-[480px] flex justify-center items-center bg-[#1B5C12] text-white"
-      style={{ gap: "150px" }}
+      className="w-full md:h-[480px] h-auto py-16 flex justify-center items-center bg-[#1B5C12] text-white"
     >
       <div
-        className="relative flex flex-col items-center bg-[#1B5C12] text-center text-white rounded-lg"
+        className="relative flex flex-col items-center bg-[#1B5C12] text-center text-white rounded-lg w-[90%] md:h-[366px] h-auto mx-auto"
         style={{
-          width: "90%",
-          height: "366px",
-          margin: '0 auto',
           top: "57px",
           marginBottom: "65px",
           gap: "32px",
@@ -94,27 +86,19 @@ export default function StatsCounter() {
         <p className="text-gray-300 px-4" data-aos="fade-up">
           Free online courses. In-person learning. Certification-aligned pathways in topics like Health, Nutrition, Preventive Medicine.
         </p>
-        {/* <button className="bg-white text-green-800 px-4 py-2 rounded-md font-medium hover:bg-gray-200 transition" data-aos="fade-up" data-aos-delay="200">
-          Get Started
-        </button> */}
 
         <div className="flex flex-wrap justify-center gap-[35px] mt-6">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-[rgba(190,230,252,0.3)] flex flex-col justify-center items-center text-center shadow-md"
-
+              className="bg-[rgba(190,230,252,0.3)] flex flex-col justify-center items-center text-center shadow-md rounded-xl p-8"
               data-aos="zoom-in"
               data-aos-delay={100 * index}
               style={{
-                width: "17%",
-                height: "148px",
+                width: "calc(50% - 35px)", 
+                maxWidth: "250px",
+                minHeight: "148px",
                 gap: "19px",
-                borderRadius: "12px",
-                paddingTop: "32px",
-                paddingRight: "48px",
-                paddingBottom: "32px",
-                paddingLeft: "48px",
               }}
             >
               <p className="text-3xl font-bold">{counters[index]}{stat.suffix}</p>
@@ -123,6 +107,23 @@ export default function StatsCounter() {
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @media screen and (min-width: 768px) {
+          /* Medium screens and above - show in a row of 4 */
+          .flex-wrap > div {
+            width: calc(25% - 35px) !important;
+            min-width: 160px;
+          }
+        }
+        
+        @media screen and (max-width: 640px) {
+          /* Extra small screens - stack them */
+          .flex-wrap > div {
+            width: calc(100% - 35px) !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

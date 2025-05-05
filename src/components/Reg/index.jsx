@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import FormInput from '../../components/FormInput';
+import { Link } from 'react-router-dom';
 import './style.css';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth, db } from '../Firebase';
@@ -240,6 +241,11 @@ const AccountRegistrationForm = () => {
           >
             {loading ? 'CREATING ACCOUNT...' : 'CREATE MY ACCOUNT'}
           </button>
+        </div>
+        <div className="form-links">
+          <div className="signup-link">
+            Already have an account? <Link to="/login">Login</Link> Here
+          </div>
         </div>
       </form>
     </div>

@@ -1,42 +1,88 @@
-.container{
-    border-top-right-radius: 10px;
-}
 .course {
-    width: 90%;
-    margin: 100px auto 250px;
-    position: relative;
-    padding-bottom: 100px;
+  width: 90%;
+  margin: 50px auto;
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: visible;
+
+}
+
+.healthtext {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.cards {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: static;
+}
+
+.cards > div {
+  width: 90%;
+  margin: 0 auto;
+  min-height: 220px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.icons {
+  margin-bottom: 15px;
+}
+
+
+.cardtext {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  .course {
+    padding-bottom: 20px;
   }
   
-  .cards {
-    width: 85%;
-    margin: auto;
-    position: absolute;
-    left: 0;
-    right: 0;
-    padding: 0 40px;
-    bottom: -190px; 
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  .mobile-spacer {
+    height: 20px;
   }
-  
-  @media (min-width: 768px) {
-    .cards {
-      flex-direction: row;
-    }
-  }
-  
-  
+}
+
+@media (min-width: 768px) {
   .healthtext {
     padding-left: 40px;
     padding-top: 40px;
   }
 
-.icons{
-    margin: 10px;
-}
-  .cardtext {
-    padding: 15px;
-    padding-top: 8px;
+  .course {
+    margin: 100px auto 200px;
+    padding-bottom: 100px;
   }
+
+  .cards {
+    position: absolute;
+    flex-direction: row;
+    padding: 0 40px;
+    left: 0;
+    right: 0;
+    bottom: -150px;
+  }
+
+  .cards > div {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .mobile-spacer {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    width: 85%;
+    bottom: -150px;
+  }
+}
